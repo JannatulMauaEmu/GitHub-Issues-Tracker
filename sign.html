@@ -3,105 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment05</title>
+    <title>GitHub Issues Tracker - Sign In</title>
     <style>
-        *,*::before,*::after{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    font-family: 'DM Sans',sans-serif;
-}
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-.card{
-    background: white;
-    border-radius: 20px;
-    padding: 40px 32px 36px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 8px 32px black;
-}
-.logo-wrap{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4f7f6; 
+            font-family: 'DM Sans', sans-serif;
+        }
 
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 32px 36px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
 
-.heading{
-    text-align: center;
-    margin-bottom: 28px;
-}
-.heading h1{
-    font-size: 22px;
-    font-weight: 700;
-    color: black;
-    margin-bottom: 6px;
-}
+        .logo-wrap {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
 
-.heading p{
-    font-size: 14px;
-    color: grey;
-}
-.field{
-    margin-bottom: 20px;
-}
-.field label{
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: black;
-    margin-bottom: 8px;
-}
-.field input{
-    font-size: 14px;
-    width: 100%;
-    padding: 13px 16px;
-    border: 1.5px solid #e0e0e0;
-    border-radius: 10px;
-    color: #333;
-    outline: none;
-    transition: border-color 0.2s;
-    font-family: inherit;
-    background: white;
-}
+        .heading {
+            text-align: center;
+            margin-bottom: 28px;
+        }
 
-.field .hint{
-    margin-top: 6px;
-    font-size: 12.5px;
-    color: #5c35f5;
-}
-.btn-signin{
-    width: 100%;
-    padding: 15px;
-    background:#5c35f5;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s,transform 0.1s;
-    font-family: inherit;
-    margin-top: 4px;
-}
-.btn-signin :hover{
-    background: #4a27d4;
-}
-.btn-signin :active{
-    transform: scale(0.98);}
+        .heading h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: black;
+            margin-bottom: 6px;
+        }
+
+        .heading p {
+            font-size: 14px;
+            color: grey;
+        }
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: black;
+            margin-bottom: 8px;
+        }
+
+        .field input {
+            font-size: 14px;
+            width: 100%;
+            padding: 13px 16px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 10px;
+            color: #333;
+            outline: none;
+            transition: border-color 0.2s;
+            font-family: inherit;
+            background: white;
+        }
+
+        .field input:focus {
+            border-color: #5c35f5; 
+        }
+        .btn-signin {
+            width: 100%;
+            padding: 15px;
+            background: #5c35f5;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            font-family: inherit;
+            margin-top: 4px;
+        }
+        .btn-signin:hover {
+            background: #4a27d4;
+        }
+
+        .btn-signin:active {
+            transform: scale(0.98);
+        }
     </style>
 </head>
 <body>
     <div class="card">
         <div class="logo-wrap">
-            <img src="images/github-logo.png" width="72px" height="72px">
+            <img src="images/github-logo.png" width="72" height="72" alt="GitHub Logo">
         </div>
 
         <div class="heading">
@@ -111,32 +115,30 @@ body{
 
         <div class="field">
             <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter Username">
+            <input type="text" id="username" placeholder="Enter Username" autocomplete="username">
         </div>
 
         <div class="field">
             <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter Password">
+            <input type="password" id="password" placeholder="Enter Password" autocomplete="current-password">
         </div>
-        <button class="btn-signin" onclick="handleSignIn()">Sign In</button>
 
+        <button class="btn-signin" onclick="handleSignIn()">Sign In</button>
     </div>
 
     <script>
-        function handleSignIn()
-        {
+        function handleSignIn() {
             const u = document.getElementById('username').value;
             const p = document.getElementById('password').value;
-            if(u === 'admin' && p ==='admin123')
-            {
-                alert("successful");
-            }
-            else{
-                alert("Invalid");
+            if (u === 'admin' && p === 'admin123') {
+                console.log("Login Successful");
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', u);
+                window.location.href = "index.html"; 
+            } else {
+                alert("Invalid Username or Password. Please try 'admin' and 'admin123'.");
             }
         }
     </script>
-    
-    
 </body>
 </html>
