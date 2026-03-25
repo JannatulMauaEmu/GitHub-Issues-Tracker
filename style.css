@@ -170,12 +170,11 @@ body{
     background: #fff;
     cursor: pointer;
 }
-.card.open{
-    border-top: 3px solid #22c55e;
+.card.status-open {
+    border-top: 8px solid #28a745; 
 }
-
-.card.closed{
-    border-top: 3px solid #a855f7;
+.card.status-closed {
+    border-top: 8px solid #5c35f5; 
 }
 .card-top{
     display: flex;
@@ -268,4 +267,37 @@ body{
 .card-footer span{
     color: #777;
     font-weight: 500;
+}
+
+.modal-meta-box{
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.status-pill{
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.status-pill.open{
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status-pill.closed{
+    background: #f3e8ff;
+    color: #7e22ce;
+}
+.modal-content{
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 700px;
+    width:75%;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
 }
