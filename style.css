@@ -4,127 +4,268 @@
     padding: 0;
 }
 body{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: white;
     font-family: 'DM Sans',sans-serif;
 }
 
-.card{
+.navbar{
     background: white;
-    border-radius: 20px;
-    padding: 40px 32px 36px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 8px 32px black;
-}
-.logo-wrap{
+    border-bottom: 1.5px solid #e8e8e8;
+    padding: 0 32px;
+    height: 64px;
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;    
 }
-
-
-.heading{
-    text-align: center;
-    margin-bottom: 28px;
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
 }
-.heading h1{
-    font-size: 22px;
+.logo span{
+    font-size: 17px;
     font-weight: 700;
     color: black;
-    margin-bottom: 6px;
 }
-
-.heading p{
-    font-size: 14px;
-    color: grey;
-}
-.field{
-    margin-bottom: 20px;
-}
-.field label{
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: black;
-    margin-bottom: 8px;
-}
-.field input{
-    font-size: 14px;
-    width: 100%;
-    padding: 13px 16px;
-    border: 1.5px solid #e0e0e0;
-    border-radius: 10px;
-    color: #333;
-    outline: none;
-    transition: border-color 0.2s;
-    font-family: inherit;
-    background: white;
-}
-
-.field .hint{
-    margin-top: 6px;
-    font-size: 12.5px;
-    color: #5c35f5;
-}
-.btn-signin{
-    width: 100%;
-    padding: 15px;
-    background:#5c35f5;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s,transform 0.1s;
-    font-family: inherit;
-    margin-top: 4px;
-}
-.btn-signin :hover{
-    background: #4a27d4;
-}
-.btn-signin :active{
-    transform: scale(0.98);}
-
-.divider{
+.nav-right{
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 24px 0 18px;
-}    
+}
 
-.divider::before,
-.divider::after{
-content: '';
-flex: 1;
-height: 1px;
-background: #e8e8e8;
+.search-input{
+    padding: 9px 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #333;
+    width: 240px;
+    outline: none;
+    background: #fff;
 }
-.divider span{
-    font-size: 13px;
-    color: #999;
+
+.search-input::placeholder{
+    color: black;
+}
+
+.btn-new{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 20px;
+    background: #5c35f5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+body{
+    background: white;
+    font-family: 'DM Sans',sans-serif;
+    padding: 32px 24px;
+}
+
+.tabs{
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1.5px solid #e0e0e0;
+    padding: 5px;
+    width: fit-content;
+}
+
+.tab{
+    padding: 8px 24px;
+    border-radius: 7px;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 14px;
     font-weight: 500;
+    color: #555;
+    cursor: pointer;
 }
-.demo-label{
+
+.tab .active{
+    background: #5c35f5;
+    font-weight: 600;
+}
+
+.container{
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    border: 1.5px solid #e8e8e8;
+}
+.header{
+    display: flex;
     text-align: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.header-left{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-left img{
+    width: 40px;
+    height: 40px;
+}
+
+.header-left h2{
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+}
+.header-left p{
     font-size: 13px;
-    color: #aaa;
+    color: #888;
+    margin-top: 2px;
+}
+
+.legend{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 13px;
+    color: #555;
+}
+
+.legend .dot{
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.dot-open{
+    background: #22c55e;
+}
+.dot-closed{
+    background: #a855f7;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+}
+
+.card{
+    border: 1.5px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: #fff;
+    cursor: pointer;
+}
+.card.open{
+    border-top: 3px solid #22c55e;
+}
+
+.card.closed{
+    border-top: 3px solid #a855f7;
+}
+.card-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.demo-box{
-    background: #f7f7f7;
-    border-radius: 10px;
-    padding: 14px 18px;
-    text-align: center;
+.card-top img{
+    width: 18px;
+    height: 18px;
 }
 
-.demo-box p{
-    font-size: 14px;
-    color: #333;
-    
+.badge{
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.badge-high{
+    background: #ffe4e4;
+    color: #e53e3e;
+}
+.badge-medium{
+    background: #ffe4e4;
+    color: #e07b00;
+}
+.badge-low{
+    background: #ffe4e4;
+    color: #888;
+}
+
+.card-title{
+    font-size:13.5px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 6px;
+    line-height: 1.4;
+
+}
+
+.card-desc{
+    font-size: 12px;
+    color: #888;
+    line-height: 1.5px;
+    margin-bottom: 10px;
+}
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.tag{
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+}
+
+.tag-bug{
+    background: #fff0f0;
+    color: #e53e3e;
+    border: 1px solid #ffd5f5;
+}
+
+.tag-help{
+    background: #fff8e0;
+    color: #c68a00;
+    border: 1px solid #ffe9a0;
+}
+
+.tag-enhancement{
+    background: #e6fff0;
+    color: #1a9a4e;
+    border: 1px solid #a8efc5;
+}
+
+.card-footer{
+    font-size: 11.5px;
+    color: #aaa;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 10px;
+    line-height: 1.6;
+}
+
+.card-footer span{
+    color: #777;
+    font-weight: 500;
 }
